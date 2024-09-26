@@ -5,10 +5,10 @@ import pdfkit
 from transformers import pipeline
 import spacy
 import nltk
-from conative import get_conative
-from referential import get_ner
-from emotive_expressive import extract_expressive_emotive
-from utils import get_token,align_entities_with_words,resolve_entities,count_conative_ref,count_expressive_emotional
+from .conative import get_conative
+from .referential import get_ner
+from .emotive_expressive import extract_expressive_emotive
+from .utils import get_token,align_entities_with_words,resolve_entities,count_conative_ref,count_expressive_emotional
 from tqdm import tqdm
 import concurrent.futures
 import threading

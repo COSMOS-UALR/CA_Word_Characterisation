@@ -3,7 +3,7 @@ import nltk
 import re
 from spacy.matcher import Matcher  
 from spacy.util import filter_spans
-from utils import  non_performing_verbs,extra_conative
+from .utils import  non_performing_verbs,extra_conative
 
 
 
