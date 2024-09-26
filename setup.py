@@ -26,5 +26,5 @@ setup(
     "PyYAML==6.0.1"
 ],
 include_package_data=True,
-package_data= {"ca_model.data":["updated_verbs_array.json"]}
+package_data= {"ca_model":["data/updated_verbs_array.json"]}
 )
