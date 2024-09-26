@@ -1,1 +1,1 @@
-from ca_model import CA_Model
+from model import CA_Model
