@@ -36,20 +36,16 @@ def download_and_load_model_files():
     if not os.path.exists(nltk_data_path):
         print("Downloading NLTK 'punkt' model")
         nltk.download('punkt')
-    else:
-        print("NLTK 'punkt' model already downloaded")
+    
     
     nltk_pos_path = os.path.expanduser('~') + '/nltk_data/taggers/averaged_perceptron_tagger'
     if not os.path.exists(nltk_pos_path):
         print("Downloading NLTK 'averaged_perceptron_tagger' model")
         nltk.download('averaged_perceptron_tagger')
-    else:
-        print("NLTK 'averaged_perceptron_tagger' model already downloaded")
-
+    
     # Check if spaCy model is already downloaded
     try:
         nlp = spacy.load("en_core_web_sm")
-        print("SpaCy 'en_core_web_sm' model already downloaded")
     except OSError:
         print("Downloading spaCy 'en_core_web_sm' model")
         spacy.cli.download("en_core_web_sm")
@@ -69,8 +65,7 @@ def initialize_model():
             
             TOKEN = get_token()
             print("Models loaded")
-        else:
-            print("Models are already initialized.")
+        
 
 def extract_entities_from_text(text, do_emotion=False):
     global nlp, emotion_classifier, TOKEN
