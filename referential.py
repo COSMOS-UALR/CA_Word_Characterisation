@@ -55,10 +55,11 @@ def get_ner(data,use_spacy=False)->List[Dict]:
                         if not 'isPronoun' in mention:
                             entities.append({"text":mention['text'],"start":mention['beginOffset'],"end":mention["endOffset"],"entity_group":"referential",'source':data.text})
         else:
-            print("unable to use diffbot to extract NER",{e})
+            print("unable to use diffbot to extract NER")
             print(" using spacy model to extract referntial element",flush=True)
     except Exception as e:
         print("unable to use diffbot to extract NER",{e})
         print(" using spacy model to extract referntial element",flush=True)
         entities = get_referential_using_spacy(data)
     return entities
+
