@@ -218,7 +218,7 @@ non_performing_verbs = set([
 
 def load_verbs():
     # Ensure that the file is included in the 'data' directory of the package
-    with pkg_resources.open_text('data','updated_verbs_array.json') as f:
+    with pkg_resources.open_text('ca_model.data','updated_verbs_array.json') as f:
         verbs = json.load(f)['verbs']
     return verbs
 extra_conative = load_verbs()
