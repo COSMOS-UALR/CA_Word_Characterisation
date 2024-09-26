@@ -4,6 +4,7 @@ import yaml
 import os
 from unidecode import unidecode
 import numpy as np
+import importlib.resources as pkg_resources  
 
 
 def count_conative_ref(conative,referential,text,nlp):
@@ -210,6 +211,14 @@ non_performing_verbs = set([
     "need", "dare", "used to", "had better"
 
 ])
-print(os.path.abspath('.'))
 
-extra_conative = json.load(open("updated_verbs_array.json"))['verbs']
+
+
+
+
+def load_verbs():
+    # Ensure that the file is included in the 'data' directory of the package
+    with pkg_resources.open_text('data','updated_verbs_array.json') as f:
+        verbs = json.load(f)['verbs']
+    return verbs
+extra_conative = load_verbs()

@@ -25,5 +25,6 @@ setup(
     "unidecode==1.3.8",
     "PyYAML==6.0.1"
 ],
-
+include_package_data=True,
+package_data= {"data":["updated_verbs_array.json"]}
 )
