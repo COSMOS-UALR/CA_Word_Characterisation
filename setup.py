@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-from .version import __version__
+__version__ = '0.1'
 
 setup(
     name='ca_model',
