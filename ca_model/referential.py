@@ -26,7 +26,7 @@ def get_referential_using_spacy(data):
     entities =[]
 
     for ent in data.doc.ents:
-        entities.append({"text":ent.text, "start":ent.start_char, "end":ent.end_char, "entity_group":"referential",'source':data.text})
+        entities.append({"text":ent.text, "start":ent.start_char, "end":ent.end_char, "entity_group":"referential"})
     return entities
 
 def get_ner(data,use_spacy=False)->List[Dict]:
@@ -52,7 +52,7 @@ def get_ner(data,use_spacy=False)->List[Dict]:
                     mentions = df.mentions[i]
                     for mention in mentions:
                         if not 'isPronoun' in mention:
-                            entities.append({"text":mention['text'],"start":mention['beginOffset'],"end":mention["endOffset"],"entity_group":"referential",'source':data.text})
+                            entities.append({"text":mention['text'],"start":mention['beginOffset'],"end":mention["endOffset"],"entity_group":"referential"})
         else:
             print("unable to use diffbot to extract NER")
             print(" using spacy model to extract referntial element",flush=True)

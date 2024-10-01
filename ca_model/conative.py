@@ -80,7 +80,7 @@ def get_conative(data):
         for match in spans:
         
             start,end = match.start_char,match.end_char #find_start_end(match.text,sent_doc.text)
-            entry = {"text":match.text,"start":idx+start,"end":idx+end,"entity_group":"conative",'source':data.text}
+            entry = {"text":match.text,"start":idx+start,"end":idx+end,"entity_group":"conative"}
             if entry in conative:
                 print(entry,sent_doc,idx)
                 raise ValueError("Not a valid result")
