@@ -53,7 +53,7 @@ def get_token(file_path="token.yml", env_var="API_TOKEN"):
 
     # input the token if not found in environment or file
     if token is None:
-        token = input("Enter your Diffbot token: ").strip()
+        token = input("Enter your Diffbot token: ").strip() or ''
     
     # Optionally, save the token to the YAML file for future use
     save_to_file = input(f"Do you want to save the token to '{file_path}' for future use? (y/n): ").strip().lower()
