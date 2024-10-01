@@ -305,7 +305,7 @@ class CA_Model:
         result_count =[]
         results = process_texts_in_parallel(texts,do_emotion=True,max_workers=8)
         for text,result in zip(texts,results):
-            result_count.append([count_conative_ref(result[0],result[1],text,nlp),*count_expressive_emotional(result[2],result[3],text,nlp)])
+            result_count.append([*count_conative_ref(result[0],result[1],text,nlp),*count_expressive_emotional(result[2],result[3],text,nlp)])
         if return_counts:
             return results,result_count
         return results
